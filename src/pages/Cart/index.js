@@ -62,6 +62,8 @@ function Cart() {
       <div className={cx("inner")}>
         <img src={logo} className={cx("logo_nike")} alt="logo_nike" />
         <div className={cx("circle_top")}></div>
+        <div className={cx("header_hide")}></div>
+
         <div className={cx("header")}>
           <div className={cx("title_header")}>Your cart</div>
           <div className={cx("total_cart")}>{listCart && listCart.length > 0 ? "$"+ total : "$0.00"}</div>

@@ -8,34 +8,54 @@
 }
 .circle_top {
   position: absolute;
+  position: fixed;
+
   width: 25rem;
   height: 30rem;
   background-color: var(--Yellow);
   transform: translate(-55%, -50%);
   border-radius: 50%;
-  z-index: -1;
+  z-index: 2;
 }
 .logo_nike {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   width: 10rem;
+  position: fixed;
+  top: 1%;
+  margin-left: 2rem;
+
+}
+.header_hide {
+  position: absolute;
+  padding-top: 10rem;
+  z-index: 1;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: white;
 }
 .header {
-  margin-top: 7rem;
   display: flex;
+  width: 95%;
+  top: 0px;
+  padding-top: 7rem;
   justify-content: space-between;
+  z-index: 3;
+  position: fixed;
 }
 .title_header {
   z-index: 10;
   font-size: 2.2rem;
   font-weight: 600;
+  margin-left: 2rem;
 }
 .total_cart {
   font-size: 2.2rem;
   font-weight: 600;
 }
 .list_cart {
-  margin-top: 5rem;
+  margin-top: 15rem;
   display: flex;
   flex-direction: column;
   row-gap: 3rem;

@@ -56,6 +56,7 @@ function Home() {
       <div className={cx("inner")}>
         <img src={logo} className={cx("logo_nike")} alt="logo_nike" />
         <div className={cx("circle_top")}></div>
+        <div className={cx("header_hide")}></div>
         <div className={cx("header")}>
           <div className={cx("title_header")}>Our Products</div>
           <Link className={cx("wrapper_cart")} to="/cart">
