@@ -137,7 +137,7 @@
   top: -50%;
   left: 50%;
 }
-@media only screen and (max-width: 46.1875) {
+@media only screen and (max-width: 46.1875rem) {
   .list_product {
     display: grid;
     grid-template-columns: 100%;
@@ -150,3 +150,12 @@
     color: var(--Gray);
   }
 }
+@media only screen and (min-width:46.25rem) and (max-width: 63.9375rem) {
+    .list_product {
+      display: grid;
+      grid-template-columns: 45% 45%;
+      grid-column-gap: 5%;
+      grid-row-gap: 2rem;
+    }
+
+  }
