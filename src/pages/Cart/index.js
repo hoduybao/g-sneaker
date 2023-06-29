@@ -13,9 +13,11 @@ function Cart() {
   const [listCart, setListCart] = useState(data);
 
   const totalPrice = (listProduct) => {
-    return listProduct.reduce((accumulator, product) => {
-      return accumulator + product.price*product.quantity;
-    }, 0).toFixed(2);
+    return listProduct
+      .reduce((accumulator, product) => {
+        return accumulator + product.price * product.quantity;
+      }, 0)
+      .toFixed(2);
   };
   const [total, setTotal] = useState(() => {
     return totalPrice(data);
@@ -25,11 +27,11 @@ function Cart() {
     product[id].quantity = product[id].quantity + 1;
     const jsonNewData = JSON.stringify(product);
     localStorage.setItem("data_cart", jsonNewData);
-    
+
     setListCart(product);
-    setTotal(()=>{
+    setTotal(() => {
       return totalPrice(product);
-    })
+    });
   };
   const minusQuantity = (id) => {
     var product = [...listCart];
@@ -40,9 +42,9 @@ function Cart() {
     const jsonNewData = JSON.stringify(product);
     localStorage.setItem("data_cart", jsonNewData);
     setListCart(product);
-    setTotal(()=>{
+    setTotal(() => {
       return totalPrice(product);
-    })
+    });
   };
 
   const removeProduct = (id) => {
@@ -52,9 +54,9 @@ function Cart() {
     const jsonNewData = JSON.stringify(product);
     localStorage.setItem("data_cart", jsonNewData);
     setListCart(product);
-    setTotal(()=>{
+    setTotal(() => {
       return totalPrice(product);
-    })
+    });
   };
 
   return (
@@ -66,7 +68,9 @@ function Cart() {
 
         <div className={cx("header")}>
           <div className={cx("title_header")}>Your cart</div>
-          <div className={cx("total_cart")}>{listCart && listCart.length > 0 ? "$"+ total : "$0.00"}</div>
+          <div className={cx("total_cart")}>
+            {listCart && listCart.length > 0 ? "$" + total : "$0.00"}
+          </div>
         </div>
 
         <div className={cx("list_cart")}>
@@ -85,29 +89,31 @@ function Cart() {
                   <div className={cx("name_product")}>{product.name} </div>
                   <div className={cx("price")}>${product.price}</div>
                   <div className={cx("wrapper_quantity")}>
+                    <div>
+                      <span
+                        className={cx("plus")}
+                        onClick={() => {
+                          plusQuantity(index);
+                        }}
+                      >
+                        <FontAwesomeIcon icon={faPlus} />
+                      </span>
+                      <span className={cx("quantity")}>{product.quantity}</span>
+                      <span
+                        className={cx("minus")}
+                        onClick={() => {
+                          minusQuantity(index);
+                        }}
+                      >
+                        <FontAwesomeIcon icon={faMinus} />
+                      </span>
+                    </div>
                     <span
-                      className={cx("plus")}
-                      onClick={() => {
-                        plusQuantity(index);
-                      }}
+                      className={cx("trash")}
+                      onClick={() => removeProduct(index)}
                     >
-                      <FontAwesomeIcon icon={faPlus} />
+                      <FontAwesomeIcon icon={faTrashCan}  />
                     </span>
-                    <span className={cx("quantity")}>{product.quantity}</span>
-                    <span
-                      className={cx("minus")}
-                      onClick={() => {
-                        minusQuantity(index);
-                      }}
-                    >
-                      <FontAwesomeIcon icon={faMinus} />
-                    </span>
-                  </div>
-                  <div
-                    className={cx("trash")}
-                    onClick={() => removeProduct(index)}
-                  >
-                    <FontAwesomeIcon icon={faTrashCan} />
                   </div>
                 </div>
               </div>
