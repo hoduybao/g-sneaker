@@ -1,6 +1,15 @@
+### Link demo Netlify:  https://g-sneaker.netlify.app/
+
+
+
+### Run localhost
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+**Install the libraries before running the program using the following command line** :  
+### npm install
+
 
 ## Available Scripts
 
