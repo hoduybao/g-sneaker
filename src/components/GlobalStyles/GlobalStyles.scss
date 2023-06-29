@@ -1,0 +1,21 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
+
+:root {
+  --White: #ffffff;
+  --Black: #303841;
+  --Gray: #938f8f;
+  --Yellow: #f6c90e;
+}
+*{
+    box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.6rem;
+  text-rendering: optimizeSpeed;
+}
