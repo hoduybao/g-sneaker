@@ -119,21 +119,8 @@
 
 @media only screen and (max-width: 46.1875rem) {
   .inner {
-      width: 94%;
-    }
-  .list_product {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-row-gap: 2rem;
-}
-.description_product {
-  word-wrap: break-word;
-  font-weight: 400;
-  height: auto;
-  color: var(--Gray);
-}
-}
-@media only screen and (min-width:46.25rem) and (max-width: 63.9375rem) {
+    width: 93%;
+  }
   .image_product {
     transform: rotate(-28deg) translateY(-40px);
     filter: drop-shadow(0 30px 20px rgba(0, 0, 0, 0.2));
@@ -152,5 +139,12 @@
     bottom: 5%;
     right: 5%;
   }
+  .title_header,.logo_nike{
+    margin-left: 0rem;
+  }
+
+}
+@media only screen and (min-width:46.25rem) and (max-width: 63.9375rem) {
+ 
 
 }
